@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // to do: git countries name base on png because the " Flag_of " string will be remote 
+    
     
     var countriesArray = [String]()
     var rightScore = 0
     var totalQuestionss = 0 // with two ss
     var correctScore = 0
     var wrongScore = 0
+  
     
     // individual buttons IBOutlets
     @IBOutlet weak var one: UIButton!
@@ -81,24 +84,31 @@ class ViewController: UIViewController {
        // print(countriesArray) // testing to see if filemanager/path found countries flag
         
         askQuestion()
+        navigationController?.navigationBar.backgroundColor = UIColor.black
+      //  navigationController?.navigationBar.prefersLargeTitles = true
    
     } // viewdid load ends here
     
     func askQuestion() {
         
         countriesArray.shuffle() // shufle country arry ever time this function called
-        
+
         one.setBackgroundImage(UIImage(named: countriesArray[0]), for: .normal)
         two.setBackgroundImage(UIImage(named: countriesArray[1]), for: .normal)
         three.setBackgroundImage(UIImage(named: countriesArray[2]), for: .normal)
         
         correctScore = Int.random(in: 0...2) // assigned correct score a random number b/w 0 to 2
         
-        title = countriesArray[correctScore] // set the navigation titile to a country name from the countries array
+        result.text = "👉🏽 : " + " " + "\(countriesArray[correctScore])"
+       // title = countriesArray[correctScore] // set the navigation titile to a country name from    the countries array
+       
         
+        
+     
  
     }
     
+  
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -112,19 +122,20 @@ class ViewController: UIViewController {
             
          
            // sender.correctButtonAnimationFlash()
+            askQuestion()
             
-            result.text = " Correct "
+            
             rightScore = rightScore + 1
             totalQuestionss = totalQuestionss + 1
             passed.text = "\(rightScore)"
             totalQuestions.text = "\(totalQuestionss)"
-            askQuestion()
+            
        
         default:
             
             sender.wrongButtonAnimationShake()
             
-            result.text = " Wrong "
+            
             wrongScore = wrongScore + 1
             totalQuestionss = totalQuestionss + 1
             failed.text = "\(wrongScore)"
@@ -137,27 +148,46 @@ class ViewController: UIViewController {
         
     }
     
+    func nextQuestion() { // this function runs if nextbutton is pressed
+        
+        askQuestion() // shuffle array and assigned buttons backgrounds
+        totalQuestionss = totalQuestionss + 1
+        totalQuestions.text = "\(totalQuestionss)"
+    }
     
-    @IBAction func nextAndPreviousButton(_ sender: UIButton) {
+   
         
+    @IBAction func next(_ sender: UIButton) {
         
-        
-        
-        
-        
+        nextQuestion()
     }
     
     
     
+    @IBAction func hint(_ sender: UIButton) {
+        
     
+        
+        for hitButton in buttons {
+            
+            if hitButton.tag == correctScore {
+               hitButton.correctButtonAnimationFlash()
+            }
+  
+        }
+        
+    }
     
     
 
-    
-    
+  
+
+        
+        
+        
 
 
-}
+} // vc end here
 
 
 
@@ -165,14 +195,14 @@ extension UIButton {  // button animation  code
     
     func correctButtonAnimationFlash() {
         
-        let flashButton = CABasicAnimation(keyPath: "opercity")
+        let flashButton = CASpringAnimation(keyPath: "transform.scale")
         flashButton.duration = 0.3
-        flashButton.fromValue = 1
-        flashButton.toValue = 0.1
-        flashButton.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flashButton.fromValue = 0.95
+        flashButton.toValue = 1.0
         flashButton.autoreverses = true
         flashButton.repeatCount = 1
-        
+        flashButton.initialVelocity = 0.5
+   
         layer.add(flashButton, forKey: nil)
   
     }

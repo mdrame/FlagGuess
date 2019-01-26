@@ -21,15 +21,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gpq-5O-pab" userLabel="ButtomsubView">
                                 <rect key="frame" x="0.0" y="532" width="375" height="280"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YT-Rd-Zcm" userLabel="previous">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YT-Rd-Zcm" userLabel="previous">
                                         <rect key="frame" x="37" y="46" width="70" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="75W-F1-Zxf"/>
                                             <constraint firstAttribute="width" constant="70" id="yrO-Wg-srJ"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="previous"/>
+                                        <state key="normal" backgroundImage="key"/>
+                                        <connections>
+                                            <action selector="hint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f6l-fI-g5w"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNm-mU-1qj" userLabel="next">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNm-mU-1qj" userLabel="next">
                                         <rect key="frame" x="277" y="46" width="70" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="7yG-6N-TdL"/>
@@ -37,10 +40,10 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="next"/>
                                         <connections>
-                                            <action selector="nextAndPreviousButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKH-Qx-hVY"/>
+                                            <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1b6-wk-ZHR"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5De-yx-I07">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5De-yx-I07">
                                         <rect key="frame" x="37" y="151" width="310" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.16380089521408081" green="0.16799619793891907" blue="0.21317636966705322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,8 +51,8 @@
                                         <color key="textColor" red="0.28285076650000002" green="0.891180203" blue="0.26570183629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iew-US-mw5">
-                                        <rect key="frame" x="58" y="120" width="28" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iew-US-mw5">
+                                        <rect key="frame" x="61" y="120" width="22" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,7 +65,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="passed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryC-Qp-KAf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryC-Qp-KAf">
                                         <rect key="frame" x="134" y="53" width="26" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="7"/>
@@ -97,8 +100,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="failed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOd-Fb-5d8">
-                                        <rect key="frame" x="234" y="52" width="20" height="9"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wrong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOd-Fb-5d8">
+                                        <rect key="frame" x="233" y="52" width="22" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,7 +209,7 @@
         <image name="Flag_of_Nigeria.png" width="200" height="100"/>
         <image name="Flag_of_Spain.png" width="150" height="100"/>
         <image name="Flag_of_the_United_States.png" width="190" height="100"/>
+        <image name="key" width="480" height="480"/>
         <image name="next" width="480" height="480"/>
-        <image name="previous" width="480" height="480"/>
     </resources>
 </document>
