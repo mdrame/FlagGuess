@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ViewController: UIViewController {
     
@@ -127,6 +128,7 @@ class ViewController: UIViewController {
            // sender.correctButtonAnimationFlash()
             askQuestion()
             
+            ProgressHUD.showSuccess()
             
             rightScore = rightScore + 1
             totalQuestionss = totalQuestionss + 1
@@ -137,7 +139,7 @@ class ViewController: UIViewController {
         default:
             
             sender.wrongButtonAnimationShake()
-            
+            ProgressHUD.showError()
             
             wrongScore = wrongScore + 1
             totalQuestionss = totalQuestionss + 1
