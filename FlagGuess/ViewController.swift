@@ -66,6 +66,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8751982868, green: 0.8386563044, blue: 0.1684443783, alpha: 1)
+        
         customeButton() // custome buttons layout edits
         
         let fileManager = FileManager.default
@@ -74,9 +76,10 @@ class ViewController: UIViewController {
         
         for item in items {
             
-            if item.hasPrefix("Flag") {
+            if item.hasSuffix(".png") {
+              let itemremove =  item.dropLast(4) // cause we dont need it.
+                countriesArray.append(String(itemremove))
                 
-                countriesArray.append(item)
             }
    
         }
@@ -99,7 +102,7 @@ class ViewController: UIViewController {
         
         correctScore = Int.random(in: 0...2) // assigned correct score a random number b/w 0 to 2
         
-        result.text = "👉🏽 : " + " " + "\(countriesArray[correctScore])"
+       title = "\(countriesArray[correctScore])"
        // title = countriesArray[correctScore] // set the navigation titile to a country name from    the countries array
        
         

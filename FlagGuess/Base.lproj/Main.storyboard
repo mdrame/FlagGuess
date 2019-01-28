@@ -124,7 +124,7 @@
                                     <constraint firstAttribute="height" constant="111" id="g4O-7e-FAu"/>
                                     <constraint firstAttribute="width" constant="183" id="riD-1M-4of"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Flag_of_the_United_States.png"/>
+                                <state key="normal" backgroundImage="United_States.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbE-OC-CuW"/>
                                 </connections>
@@ -135,7 +135,7 @@
                                     <constraint firstAttribute="width" constant="183" id="B9X-Ml-nrl"/>
                                     <constraint firstAttribute="height" constant="111" id="gXD-Ik-dHP"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Flag_of_Nigeria.png"/>
+                                <state key="normal" backgroundImage="Senegal.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SsO-Ba-9Xl"/>
                                 </connections>
@@ -146,7 +146,7 @@
                                     <constraint firstAttribute="width" constant="183" id="NEi-dl-QLd"/>
                                     <constraint firstAttribute="height" constant="111" id="hHB-Mj-Oa3"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Flag_of_Spain.png"/>
+                                <state key="normal" backgroundImage="France.png"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yYh-4d-bsL"/>
                                 </connections>
@@ -194,6 +194,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2tN-sa-5cf">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.6877073803" blue="0.14914538890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.6877073803" blue="0.14914538890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -206,9 +208,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Flag_of_Nigeria.png" width="200" height="100"/>
-        <image name="Flag_of_Spain.png" width="150" height="100"/>
-        <image name="Flag_of_the_United_States.png" width="190" height="100"/>
+        <image name="France.png" width="150" height="100"/>
+        <image name="Senegal.png" width="150" height="100"/>
+        <image name="United_States.png" width="190" height="100"/>
         <image name="key" width="480" height="480"/>
         <image name="next" width="480" height="480"/>
     </resources>
